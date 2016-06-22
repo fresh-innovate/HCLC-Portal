@@ -1,8 +1,8 @@
 ![alt tag](https://raw.githubusercontent.com/benhallouk/demo-2/master/src/fresh-innovate-banner.png)
 
-# Introduction
+# Hackney Law Center Portal ![alt tag](http://ci.fresh-innovate.tk/app/rest/builds/buildType:(HclcPortal_Build)/statusIcon)
 
-Fresh Innovate wins 24hr Hackathon; Having won the hackathon, we are now require to build an application which will include two portals, one for lawyers and one for clients. Lawyers can manage the cases remotely, and clients can feed in the basic information for their case using an easy-to-follow online guide with automatic translation services, spoken as well as written text services and a live chat facility that uses artificial intelligence to read the context of questions. The product will need to be mobile ready and user friendly with easy accessibility
+Fresh Innovate wins 24hr Hackathon "Law for Good"; Having won the hackathon, we are now require to build an application which will include two portals, one for lawyers and one for clients. Lawyers can manage the cases remotely, and clients can feed in the basic information for their case using an easy-to-follow online guide with automatic translation services, spoken as well as written text services and a live chat facility that uses artificial intelligence to read the context of questions. The product will need to be mobile ready and user friendly with easy accessibility
 
 ### Features and technology:
 1. Easily accessible, device compatible website and language supported through speech and text
@@ -18,15 +18,14 @@ Registration process - included a specific filtering criteria to reduce ineligib
 4. Analytics - helps the Centre to gather specific information in order to improve their service.
 
 5. Referral - which is part of add-ons was implemented to allow administrators and lawyers to refer their cases to other Law Centres.
-The platform was developed using ASP.NET MVC framework,
-Each of these problems were fed into our 3 hour iteration with a working solution completed by the end of each iteration.
+The platform was developed using ASP.NET MVC framework.
 
 ### To implement the final product, the follwoing features and will need to be implemented:
 1. Login/Registration
 2. Translation per language
 3. Live chat with AI
 4. Decision tree per category
-5. Case list / ticket details#
+5. Case list / ticket details
 6. Alerts and notifications (auto/manual)
 7. Documents upload and storage
 8. Digitally signed forms
@@ -42,7 +41,7 @@ This project is using the full stack web technologies including: ASP.NET MVC, [A
 
 To get started you need:
 -------------
-- 10 Minutes or less
+- 20 Minutes or less
 - [Visual Studio 2015] and [Visual Studio Code]
 - [Node.js] installed on your machine
 - and [Git]
@@ -65,7 +64,7 @@ git clone https://github.com/fresh-innovate/HCLC-Portal.git
 ```
 Install Node and Angular dependencies
 -------------
-Change your current directory to Hackney/Client/Portal/src folder
+Change your current directory to Hackney/Client/Portal folder
 ```sh
 cd Hackney/Client/portal
 ```
@@ -148,7 +147,7 @@ chances of your issue being dealt with quickly:
 
 * **Motivation for or Use Case** - explain what are you trying to do and why the current behavior is a bug for you
 * **Browsers and Operating System** - is this a problem with all browsers?
-* **Reproduce the Error** - provide a live example (using [Plunker][plunker],
+* **Reproduce the Error** - provide a live example (using [Gist][Gist], [Plunker][plunker],
   [JSFiddle][jsfiddle] or [Runnable][runnable]) or a unambiguous set of steps
 * **Related Issues** - has a similar issue been reported before?
 * **Suggest a Fix** - if you can't fix the bug yourself, perhaps you can point to what might be
@@ -302,7 +301,7 @@ Must be one of the following:
 * **perf**: A code change that improves performance
 * **test**: Adding missing tests or correcting existing tests
 * **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-* **ci**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+* **ci**: Changes to our CI configuration files and scripts (example scopes: Teamcity, Travis, Circle, BrowserStack, SauceLabs)
 * **chore**: Other changes that don't modify `src` or `test` files
 
 ### Scope
@@ -347,6 +346,7 @@ The version in our package.json gets copied to the one we publish, and users nee
 [gitter]: https://gitter.im/angular/angular
 [individual-cla]: http://code.google.com/legal/individual-cla-v1.0.html
 [js-style-guide]: https://google.github.io/styleguide/javascriptguide.xml
+[Gist]: https://gist.github.com/
 [jsfiddle]: http://jsfiddle.net
 [plunker]: http://plnkr.co/edit
 [runnable]: http://runnable.com
