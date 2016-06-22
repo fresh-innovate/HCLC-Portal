@@ -1,0 +1,38 @@
+.language-navbar {
+	background-color: #c8005f;
+	border-radius: 0;
+
+    .advice-line {
+        color: #fff;
+        font-size: 19px;
+        font-weight: 500;
+        padding: 20px;
+        margin: 0;
+    }
+    
+     @media only screen and (max-width: 767px) {
+        #language-switch{
+            margin-top:-337px;
+        }
+
+        .advice-line { display:block; float:none !important; padding: 15px 0; } 
+
+        .navbar.navbar-top .tooltip > .tooltip-inner { display:none; }
+.navbar.navbar-top .tooltip > .tooltip-arrow { display:none; }
+    }
+}
+
+
+ #language-switch{
+     margin-top:0;
+}
+
+ #language-switch li:hover{
+     background-color:#b00056;
+}
+
+ @media only screen and (min-width: 769px) {
+    #language-switch{
+        margin-top:0 !important;
+    }
+ }

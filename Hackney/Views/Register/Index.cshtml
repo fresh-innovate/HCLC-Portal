@@ -1,0 +1,144 @@
+﻿@{
+    var category = Request.QueryString["category"];
+}
+
+<section class="open-case" style="margin-bottom:80px;">
+    <div class="container">
+        <h1 class="text-center"><i class="fa fa-folder-open fa-fw"></i> Open a Case</h1>
+        <div class="well col-sm-8 col-sm-offset-2">
+            <fieldset class="income-checker">
+                <div class="col-sm-12 form-group form-group-lg" style="padding-top:0;">
+                    <label style="position:relative; padding:0;">Is your monthly income more than £2657 a month before tax?</label>
+                    <div class="radio">
+                        <label class="radio-inline"><input type="radio" style="margin-top:8px;" name="monthlyIncome" ng-model="data.monthlyIncome" value="false" /> Yes</label>
+                        <label class="radio-inline"><input type="radio" style="margin-top:8px;" name="monthlyIncome" ng-model="data.monthlyIncome" value="true" /> No</label>
+                    </div>
+                </div>
+                <div class="col-sm-12 form-group form-group-lg" style="border-top:1px solid #e3e3e3;" ng-if="data.monthlyIncome === 'true'">
+                    <label style="position:relative; padding:0;">Is your monthly disposable income more than £733 a month?</label>
+                    <div class="radio">
+                        <label class="radio-inline"><input type="radio" name="monthlyDisposable" ng-model="data.monthlyDisposable" value="false" /> Yes</label>
+                        <label class="radio-inline"><input type="radio" name="monthlyDisposable" ng-model="data.monthlyDisposable" value="true" /> No</label>
+                    </div>
+                </div>
+                <div class="col-sm-12 form-group form-group-lg" style="border-top:1px solid #e3e3e3;" ng-if="data.monthlyDisposable === 'true'">
+                    <label style="position:relative;  padding:0;">Do you have savings of more than £8000?</label>
+                    <div class="radio">
+                        <label class="radio-inline"><input type="radio" name="saving" ng-model="data.savings" value="false" /> Yes</label>
+                        <label class="radio-inline"><input type="radio" name="saving" ng-model="data.savings" value="true" /> No</label>
+                    </div>
+                </div>
+                <div class="alert alert-danger col-sm-12" style="margin:0;" ng-if="data.monthlyIncome === 'false' || data.monthlyDisposable === 'false' || data.savings === 'false'" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                    Unfortunately, you do not qualify for Hackney Community Legal Centre advice. To find a local lawyer who may be able to assist you, visit http://solicitors.lawsociety.org.uk/.
+                </div>
+        </fieldset>
+
+        <fieldset ng-if="data.savings === 'true'">
+            <div class="col-sm-8">
+                Your Case Category: <label style="position:relative;">@category</label>
+            </div>
+            <div class="col-sm-8 form-group form-group-lg">
+                <label style="position:relative;">What is your name?</label>
+                <input type="text" placeholder="Enter Your Name.." class="form-control form-control-lg" autofocus>
+            </div>
+            <div class="col-sm-8 form-group form-group-lg">
+                <label>Choose your password</label>
+                <input type="password" placeholder="Enter Your Password.." class="form-control form-control-lg">
+            </div>
+            <div class="col-sm-8 form-group form-group-lg">
+                <label>Confirm password</label>
+                <input type="password" placeholder="Confirm Password.." class="form-control form-control-lg">
+            </div>
+            <div class="col-sm-8">
+                <p style="font-size:18px; color:#3b497e;"><a data-toggle="collapse" href="#collapsePhoneNumber" aria-expanded="false" aria-controls="collapsePhoneNumber"><i class="fa fa-plus-circle"></i> Add your phone number</a></p>
+                <div class="form-group form-group-lg collapse" id="collapsePhoneNumber">
+                    <label style="position:relative;">What is your phone number?</label>
+                    <input type="text" placeholder="Enter Your Phone Number.." class="form-control form-control-lg">
+                </div>
+            </div>
+
+            <div class="col-sm-8">
+                <p style="font-size:18px; color:#3b497e;"><a data-toggle="collapse" href="#collapseEmailAddress" aria-expanded="false" aria-controls="collapseEmailAddress"><i class="fa fa-plus-circle"></i> Add your email address</a></p>
+                <div class="form-group form-group-lg collapse" id="collapseEmailAddress">
+                    <label style="position:relative;">What is your email address?</label>
+                    <input type="text" placeholder="Enter Your Email Address.." class="form-control form-control-lg">
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <p style="font-size:18px; color:#3b497e;"><a data-toggle="collapse" href="#collapseHomeAddress" aria-expanded="false" aria-controls="collapseHomeAddress"><i class="fa fa-plus-circle"></i> Add your home adress</a></p>
+                <div class="form-group form-group-lg collapse" id="collapseHomeAddress">
+                    <label style="position:relative;">What is your home address?</label>
+                    <textarea class="form-control form-control-lg" rows="5" cols="20"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-8 form-group form-group-lg" style="margin-bottom:0; margin-top:30px;">
+                <p>
+                    <button type="button" class="btn btn-primary btn-lg" onclick="document.location.href = '/ticket/?id=1';">Yes, I want to open case</button>
+                    <button type="button" class="btn btn-default btn-lg">Cancel</button>
+                </p>
+            </div>
+        </fieldset>
+    </div>
+        <div class="col-lg-12 well" style="display:none;">
+            <div class="row">
+                <form>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>First Name</label>
+                                <input type="text" placeholder="Enter First Name Here.." class="form-control">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Enter Last Name Here.." class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea placeholder="Enter Address Here.." rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                <label>City</label>
+                                <input type="text" placeholder="Enter City Name Here.." class="form-control">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>State</label>
+                                <input type="text" placeholder="Enter State Name Here.." class="form-control">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>Zip</label>
+                                <input type="text" placeholder="Enter Zip Code Here.." class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>Title</label>
+                                <input type="text" placeholder="Enter Designation Here.." class="form-control">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Company</label>
+                                <input type="text" placeholder="Enter Company Name Here.." class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" placeholder="Enter Phone Number Here.." class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="text" placeholder="Enter Email Address Here.." class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Website</label>
+                            <input type="text" placeholder="Enter Website Name Here.." class="form-control">
+                        </div>
+                        <button type="button" class="btn btn-lg btn-info">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

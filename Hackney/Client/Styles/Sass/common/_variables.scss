@@ -1,0 +1,20 @@
+
+// color palette - these colors will be the color swatches of the Colors section
+
+$color: #000000; //black
+$color-0: #ffffff; // white
+$color-1: #7A7D84; // gray
+$color-2: #43538F; // blue
+$color-3: #00838B; // green
+$color-4: #C90062; // red
+$color-5: #E45E38; // orange
+
+// additional colors
+
+$success: #00838B; // green 
+$alert: $color-4;  // red
+
+// fonts
+
+$primary-font: 'Merriweather', serif;
+$secondary-font: 'Open Sans', sans-serif;

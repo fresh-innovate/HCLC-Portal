@@ -1,0 +1,13 @@
+﻿@{
+    var url = Request.RawUrl.Split(new string[] { "?language=" },StringSplitOptions.RemoveEmptyEntries).First();
+}
+<ul id="language-switch" class="nav navbar-nav navbar-left nav-top">
+    <li><a href="@url?language=en" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>English</p>"><img src="~/Client/Images/flags/United-Kingdom.png" /> English</a></li>
+    <li><a href="@url?language=pl" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Polish</p>"><img src="~/Client//Images/flags/Poland.png" /> Polish</a></li>
+    <li><a href="@url?language=pt" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Portuguese</p>"><img src="~/Client//Images/flags/Portugal.png"> Portuguese</a></li>
+    <li><a href="@url?language=es" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Spanish</p>"><img src="~/Client//Images/flags/Spain.png"> Spanish</a></li>
+    <li><a href="@url?language=pa" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Punjabi</p>"><img src="~/Client//Images/flags/India.png"> Punjabi</a></li>
+    <li><a href="@url?language=ur" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Urdu</p>"><img src="~/Client//Images/flags/Pakistan.png"> Urdu</a></a></li>
+    <li><a href="@url?language=ar" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Arabic</p>"><img src="~/Client//Images/flags/Saudi-Arabia.png"> Arabic</a></li>
+    <li id="translation-result"></li>
+</ul>

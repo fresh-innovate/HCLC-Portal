@@ -1,0 +1,55 @@
+<div class="wrapper">
+    <div class="header">
+        <div class="navbar navbar-top language-navbar">
+            <div class="container-fluid">
+                <ul id="language-switch" class="nav navbar-nav navbar-left nav-top">
+                    <li><a href="/LawyerPortal/?language=en" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>English</p>"><img src="/Client/Images/flags/United-Kingdom.png"> English</a></li>
+                    <li><a href="/LawyerPortal/?language=pl" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Polish</p>"><img src="/Client/Images/flags/Poland.png"> Polish</a></li>
+                    <li><a href="/LawyerPortal/?language=pt" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Portuguese</p>"><img src="/Client/Images/flags/Portugal.png"> Portuguese</a></li>
+                    <li><a href="/LawyerPortal/?language=es" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Spanish</p>"><img src="/Client/Images/flags/Spain.png"> Spanish</a></li>
+                    <li><a href="/LawyerPortal/?language=pa" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Punjabi</p>"><img src="/Client/Images/flags/India.png"> Punjabi</a></li>
+                    <li><a href="/LawyerPortal/?language=ur" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Urdu</p>"><img src="/Client/Images/flags/Pakistan.png"> Urdu</a></li>
+                    <li><a href="/LawyerPortal/?language=ar" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="<p>Arabic</p>"><img src="/Client/Images/flags/Saudi-Arabia.png"> Arabic</a></li>
+                    <li id="translation-result"></li>
+                </ul>
+
+                <p class="advice-line pull-right">Call for Advice&nbsp;<i class="fa fa-phone"></i> 020 8985 8364</p>
+                <a href="#" class="visible-xs btn-switch-language">
+                    <i class="fa fa-globe"></i> Switch language
+                </a>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars fa-lg"></i>
+                    </button>
+                    <a class="navbar-brand" href="/" title="Hackney Law Center">
+                        <img src="/client/images/hackney_law_center_logo.jpeg" width="148" alt="Hackney Law Center">
+                    </a>
+                    <div class="navbar-text hidden-xs"><a href="/" title="Log Out"><i class="fa fa-key fa-fw"></i>Log Out</a></div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#branding">About Us</a></li>
+                        <li><a href="#colors">Contact Us</a></li>
+                        <li><a href="#typography">How we can help you</a></li>
+                        <li><a href="#buttons">How you can help us</a></li>
+                        <li class="visible-xs"><a href="/" title="Log Out">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="container">
+        <router-outlet></router-outlet>
+    </main>
+    <div class="push"></div>
+</div>
+<footer id="footer" class="footer">
+    <div class="container">
+        <p class="pull-left">2016 &copy; <a href="https://github.com/fresh-innovate" title="Fresh Innovate Github">Fresh Innovate</a></p>
+    </div>
+</footer>

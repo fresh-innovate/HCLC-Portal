@@ -1,0 +1,191 @@
+﻿
+<div class="popup-box chat-popup" id="qnimate">
+    <div class="popup-head">
+        <div class="popup-head-left pull-left">
+            <img src="~/Client/Images/lawyer_avatar.png" alt="Online Assistant">
+            Online Assistant
+        </div>
+        <div class="popup-head-right pull-right">
+            <div class="btn-group">
+                <ul role="menu" class="dropdown-menu pull-right">
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Block</a></li>
+                    <li><a href="#">Clear Chat</a></li>
+                    <li><a href="#">Email Chat</a></li>
+                </ul>
+            </div>
+
+            <button onclick="$('#qnimate').removeClass('popup-box-on');" data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-off"></i></button>
+        </div>
+    </div>
+    <div class="popup-messages">
+        <div class="direct-chat-messages">
+            <div class="chat-box-single-line">
+                <abbr class="timestamp">March 22nd, 2016</abbr>
+            </div>
+            <div class="direct-chat-msg doted-border">
+                <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-left">Assistant</span>
+                </div>
+                <!-- /.direct-chat-info -->
+                <img alt="message user image" src="~/Client/Images/lawyer_avatar.png" class="direct-chat-img">
+                <div class="direct-chat-text">
+                    Hello,
+                    All our lawyers are busy at the moment, but if you type in a few words about your problem below,
+                    I will send you information that might help you. From there you can open a case and get an appointment to speak to a lawyer.
+                </div>
+                <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-timestamp pull-right">3.36 PM</span>
+                </div>
+                <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-img-reply-small pull-left">
+
+                    </span>
+                    <span class="direct-chat-reply-name">Anonymous</span>
+                </div>
+                <!-- /.direct-chat-text -->
+            </div>
+            <!-- /.direct-chat-msg -->
+
+            <!-- Message. Default to the left -->
+            <div id="chat-conversation" class="direct-chat-msg doted-border">
+
+                <!--Anonymous
+                <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-name pull-left">Assistant</span>
+                    <div class="direct-chat-text">
+                        Hello,
+                        All our lawyers are busy at the moment, but if you type in a few words about your problem below,
+                        I will send you information that might help you. From there you can open a case and get an appointment to speak to a lawyer.
+                    </div>
+                </div>
+                -->
+
+                
+            </div>
+            <!-- /.direct-chat-msg -->
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="popup-messages-footer">
+        <textarea id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message" 
+                  onkeypress="if(event.keyCode==13)sendChat(this.value);" autofocus></textarea>
+        <div class="btn-footer">
+            <button class="bg_none pull-right"><i class="glyphicon glyphicon-paperclip"></i> </button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function sendChat(message) {
+
+        var html = $("#chat-conversation").html();
+        html = html + '<div class="direct-chat-info clearfix">' +
+                    '<span class="direct-chat-name pull-left">Assistant</span>' +
+                    '<div class="direct-chat-text">' +
+                        message +
+                    '</div>' +
+                '</div>';
+        $("#chat-conversation").html(html);
+
+
+        var messages = $('.popup-messages');
+        var height = messages[0].scrollHeight;
+        messages.scrollTop(height);
+
+
+        $("#status_message").val("");
+
+
+        setTimeout(function(){replayFor(message)},2000);
+    }
+
+    function replayFor(message) {
+
+        var advice = '';
+        if (message.toLowerCase().search('housing') > -1 || message.toLowerCase().search('benefit') > -1) {
+            advice = '<p>Contact Hackney Council’s Housing Benefit Office on 020 8356 3399 to understand why your benefit has been stopped.</p>' +
+            '<p>If you believe the Housing Benefit Office is wrong to stop your benefit:</p>' +
+            '<p><a href="#">Open a case</a></p>'
+        }
+        if (message.toLowerCase().search('pip') > -1 || message.toLowerCase().search('independence') > -1) {
+            advice = '<p>New applications for PIP are made by calling the Department for Work and Pensions on 0800 917 2222.</p>' +
+            "<p>You’ll be asked for information like:</p>" +
+            "<p>-       contact details and date of birth<br>"+
+            "-       National Insurance number<br>" +
+            "-       bank or building society details<br>" +
+            "-       doctor’s or health worker’s name<br>" +
+            "-       details of any time you’ve spent abroad, or in a care home or hospital</p>"  +
+                '<p>If you need assistance with your application, or if your payments have been stopped:</p>' +
+                '<p><a href="#">Open a case</a></p>';
+        }
+        if (message.toLowerCase().search('sanctioned') > -1 || message.toLowerCase().search('reclaimed') > -1) {
+            advice = 
+            "<p>In order to continue to receive certain benefits, you must do certain things. If you stop doing those things, your benefits may stop or they may even be reclaimed.</p>"+
+                '<p>If your benefits have stopped, or are being reclaimed:</p>' +
+                '<p><a href="#">Open a case</a></p>';
+        }
+
+        if (message.toLowerCase().search('asylum') > -1) {
+            advice =  '<p>To be eligible to claim asylum, you must have left your country and be unable to return because of a fear of persecution. If you believe you are entitled to claim asylum, or if you are appealing an asylum ruling</p>'+
+            '<p><a href="/register/">Open a case</a></p>';
+        }
+
+        var html = $("#chat-conversation").html();
+        html = html + '<div class="direct-chat-info clearfix">'+
+                    '<span class="direct-chat-name pull-left">Assistant</span>'+
+                    '</div>'+
+                    '<img alt="message user image" src="http://www.landmarklegalgh.com/img/team/lawyer_avatar.png" class="direct-chat-img">'+
+                    '<div class="direct-chat-text">' +
+                        advice +
+                    '</div>' +
+                '</div>';
+        
+        $("#chat-conversation").html(html);
+
+        var messages = $('.popup-messages');
+        var height = messages[0].scrollHeight;
+        messages.scrollTop(height);
+    }
+</script>
+
+@section scripts{
+    <script>
+        $("#addClass").click(function () {
+            $('#qnimate').addClass('popup-box-on');
+        });
+
+        $("#removeClass").click(function () {
+            $('#qnimate').removeClass('popup-box-on');
+        });
+
+
+
+
+
+        function sendChat(message) {
+            $("direct-chat").html(
+                '<div class="direct-chat-info clearfix">'+
+                    '<span class="direct-chat-name pull-left">Assistant</span>'+
+                    '<div class="direct-chat-text">'+
+                        message+
+                    '</div>'+
+                '</div>');
+        }
+    </script>
+}

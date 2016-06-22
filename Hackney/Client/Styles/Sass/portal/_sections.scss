@@ -1,0 +1,178 @@
+section {
+    text-align: left;
+    padding: 30px 0 45px;
+    
+    h1 { 
+        padding: 0 0 30px; 
+        font-weight: 700; 
+        margin: 0; 
+        letter-spacing: -0.5px; 
+        font-size:36px; 
+    }
+    
+    h2 { 
+        font-weight:800; 
+        font-size:28px; 
+        padding: 0 0 0.75em; 
+        margin: 0; 
+        line-height:1.2; 
+    }
+
+    .icon {
+        font-size: 39px;
+        font-weight: 800;
+        color: #fff;
+    }
+     
+     
+/*CHOOSE PROBLEM */
+    &.choose-problem {
+        text-align: center;
+        
+        .item { 
+             text-align: center;
+             margin-bottom:15px;
+             
+             .item-inner { 
+                border:5px solid white; 
+                transition: background-color 0.5s ease; 
+                background-color:#3b497e; 
+                position:relative; 
+                padding:30px;
+                
+                .item-title { 
+                    font-size: 22px; 
+                    font-weight: 300; 
+                    padding-top:15px; 
+                    color:#fff; 
+                    padding-left:60px; 
+                    text-align:left; 
+                    min-height:70px; 
+               }
+            } 
+        }
+    }
+/*LOGIN */
+    &.login {
+        text-align: left;
+        
+        h1 { 
+            color:$color-3; 
+        }
+        
+        h2 { 
+            text-align:center; 
+            font-size: 19px; 
+            font-weight: 200; 
+            padding:10px 0; 
+            color:#006b72; 
+        }
+        
+         .well { 
+                text-align: left; 
+         } 
+        .item {
+            text-align: center; 
+            margin-bottom:15px;
+            margin: 0;
+            padding:0;
+
+            .item-inner { 
+                transition: background-color 0.5s ease; 
+                background-color:#fff; 
+                position:relative; 
+                padding:10px;
+                border:5px solid #fff; 
+                
+                &:hover {
+                     border:5px solid #006b72;
+                }
+            }
+
+            &.active {
+                
+                .item-inner { transition: background-color 0.5s ease; background-color:#00838B; position:relative;  border:5px solid #006b72; }
+                .item-inner:hover { background-color:#006b72; border:5px solid #006b72; }
+                .fa { font-size: 46px; color:#fff; }
+                h2 { text-align:center; font-size: 19px; font-weight: 200; padding-top:10px; color:#fff; }
+            }
+        }
+    }
+/*CONTACT US */
+    &.contact-us {
+        background-color: #e45e38;
+        text-align: center;
+        
+        h1 { 
+            color:#fff;
+        }
+        
+        h2 {
+            font-size: 22px;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        p {
+            color: #fff;
+            font-size:16px;
+            margin: 0;
+            
+            .fa {
+                font-size:19px;
+                vertical-align: middle;
+            }
+        }
+        
+        .btn-contact { 
+            border:1px solid #e14c22;
+            padding: 10px 15px;
+            font-size:16px;
+            color:#e14c22;
+            margin-top: 15px;
+        }   
+    }
+}
+
+
+section.login .fa { font-size: 46px; color:#006b72; }
+
+
+section.login h1 .fa { font-size:33px;  color:#006b72; }
+section.login label { font-size:21px; color:#006b72; font-weight:700; padding-bottom:15px; }
+
+
+section.login .item a { text-decoration:none;}
+
+section.login .tooltip > .tooltip-inner {background-color: #006b72; color:#fff; font-weight:800; }
+section.login .tooltip > .tooltip-arrow { border-top-color:#006b72; }
+
+section.choose-problem .item-inner .fa { font-size: 46px; color:#fff; position:absolute; top:15px; left:22px; }
+section.choose-problem .item-inner:hover { background-color:#4b5da0; border:5px solid #3b497e; }
+section.choose-problem .item.housing .fa { top:44px; font-size:49px; }
+section.choose-problem .item.benefits .fa { top: 48px; font-size: 39px; font-weight: 800; }
+section.choose-problem .item.immigration .fa { font-size: 40px; top: 47px; }
+section.choose-problem .item.employment .fa { top:47px; font-size:43px; }
+section.choose-problem .item a { text-decoration:none;}
+
+
+.section.open-case h1 {
+    font-size:36px;
+}
+section.open-case label { font-size:21px; color:#3b497e; color: #3b497e; font-weight:700; padding-bottom:15px; }
+section.open-case .form-group { margin-bottom:30px; }
+
+
+section.lawyer-portal { text-align: center; }
+section.lawyer-portal .item { text-align: center; margin-bottom:15px; }
+section.lawyer-portal .item a { text-decoration:none; }
+section.lawyer-portal .item-inner { border:5px solid white; transition: background-color 0.5s ease; background-color:#3b497e; position:relative; padding:20px; }
+section.lawyer-portal .fa { font-size: 46px; color:#fff; }
+section.lawyer-portal h2 { font-size: 19px; font-weight: 200; padding-top:15px; color:#fff; text-align:center; }
+section.lawyer-portal h1 { padding: 0 0 30px; font-weight: 700; margin: 0; letter-spacing:-0.5px; font-size:36px; }
+section.lawyer-portal .item-inner:hover { background-color:#4b5da0; border:5px solid #3b497e; }
+
+
+section.open-case fieldset.income-checker .form-group { margin:0; padding:10px 0 0; }
+section.open-case fieldset.income-checker .radio-inline { font-weight:600; font-size:19px; padding-bottom:0; }
+

@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="login">
+    <div class="container">
+        <h1 class="text-center">Log in</h1>
+        <div class="row">
+            <div class="col-md-4 col-md-push-2 item login-item active" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p>I am customer</p>">
+                <a href="#collapseLoginClient" class="login-button">
+                    <div class="item-inner text-center">
+                        <i class="fa fa-user"></i>
+                        <h2>I am customer</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-md-push-2 item login-item" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p>I am lawyer</p>">
+                <a href="#collapseLoginLawyer" class="login-button">
+                    <div class="item-inner text-center">
+                        <i class="fa fa-briefcase"></i>
+                        <h2>I am lawyer</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="well col-sm-8 col-sm-offset-2 collapse" id="collapseLoginLawyer">
+                <fieldset>
+                    <form action="/portal" method="post">
+                        <div class="col-sm-8 form-group form-group-lg">
+                            <label style="position:relative;">Your login</label>
+                            <input type="text" placeholder="Enter Your Login.." class="form-control form-control-lg" autofocus>
+                        </div>
+                        <div class="col-sm-8 form-group form-group-lg">
+                            <label style="position:relative;">Your password</label>
+                            <input type="password" placeholder="Enter Your Password.." class="form-control form-control-lg" autofocus>
+                        </div>
+                        <div class="col-sm-8 form-group form-group-lg" style="margin-bottom:0; margin-top:30px;">
+                            <p>
+                                <a class="btn btn-primary btn-lg" href="~/portal">Log in as lawyer</a>
+                                <button type="submit" class="btn btn-default btn-lg">Cancel</button>
+                            </p>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+            <div class="well col-sm-8 col-sm-offset-2 collapse" id="collapseLoginClient">
+                <form action="/portal/" method="post">
+                    <fieldset>
+                        <div class="col-sm-8 form-group form-group-lg">
+                            <label style="position:relative;">Your login</label>
+                            <input type="text" placeholder="Enter Your Login.." class="form-control form-control-lg" autofocus>
+                        </div>
+                        <div class="col-sm-8 form-group form-group-lg">
+                            <label style="position:relative;">Your password</label>
+                            <input type="password" placeholder="Enter Your Password.." class="form-control form-control-lg" autofocus>
+                        </div>
+                        <div class="col-sm-8 form-group form-group-lg" style="margin-bottom:0; margin-top:30px;">
+                            <p>
+                                <a class="btn btn-primary btn-lg" href="~/portal">Log in as client</a>
+                                    <button type="submit" class="btn btn-default btn-lg">Cancel</button>
+</p>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts {
+    <script>
+        $(function () {
+            $("#collapseLoginClient").show();
+            $(".login-button").click(function (e) {
+                e.preventDefault();
+                $("body").find(".login-item").removeClass("active");
+                $("#collapseLoginClient").hide();
+                $("#collapseLoginLawyer").hide();
+                var sectionId = $(this).attr("href");
+                $(sectionId).show();
+                $(this).parents(".login-item").addClass("active");
+            });
+        });
+    </script>
+}
