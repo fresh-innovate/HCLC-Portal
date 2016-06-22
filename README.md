@@ -1,6 +1,6 @@
 ![alt tag](https://raw.githubusercontent.com/benhallouk/demo-2/master/src/fresh-innovate-banner.png)
 
-# Hackney Law Center Portal ![alt tag](http://ci.fresh-innovate.tk/app/rest/builds/buildType:(HclcPortal_Build)/statusIcon)
+# Hackney Law Center Portal [![alt tag](http://ci.fresh-innovate.tk/app/rest/builds/buildType:(HclcPortal_Build)/statusIcon)](http://ci.fresh-innovate.tk/viewType.html?buildTypeId=HclcPortal_Build&guest=1)
 
 Fresh Innovate wins 24hr Hackathon "Law for Good"; Having won the hackathon, we are now require to build an application which will include two portals, one for lawyers and one for clients. Lawyers can manage the cases remotely, and clients can feed in the basic information for their case using an easy-to-follow online guide with automatic translation services, spoken as well as written text services and a live chat facility that uses artificial intelligence to read the context of questions. The product will need to be mobile ready and user friendly with easy accessibility
 
