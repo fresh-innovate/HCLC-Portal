@@ -20,7 +20,7 @@ Registration process - included a specific filtering criteria to reduce ineligib
 5. Referral - which is part of add-ons was implemented to allow administrators and lawyers to refer their cases to other Law Centres.
 The platform was developed using ASP.NET MVC framework.
 
-### To implement the final product, the follwoing features and will need to be implemented:
+### To implement the final product, the follwoing features will need to be implemented:
 1. Login/Registration
 2. Translation per language
 3. Live chat with AI
